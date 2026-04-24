@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Central Police Station</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <div class="top-bar">
+          <div class="site-title">
+            <span>👮</span>
+            Central Police Station
+          </div>
+          <div>
+            <p>
+              Serving the community with safety, emergency response, and public
+              support.
+            </p>
+          </div>
+        </div>
+        <div class="hero">
+          <div>
+            <h1>Trusted public safety for every neighborhood.</h1>
+            <p>
+              Access emergency services, file reports, learn about our station,
+              and stay connected with local law enforcement.
+            </p>
+            <div class="hero-actions">
+              <button
+                class="button primary"
+                type="button"
+                onclick="
+                  document
+                    .getElementById('report-form')
+                    .scrollIntoView({ behavior: 'smooth' })
+                "
+              >
+                Submit a report
+              </button>
+              <button
+                class="button secondary"
+                type="button"
+                onclick="
+                  document
+                    .getElementById('services')
+                    .scrollIntoView({ behavior: 'smooth' })
+                "
+              >
+                View services
+              </button>
+            </div>
+          </div>
+          <div class="highlight-card">
+            <h3>Emergency hotlines</h3>
+            <p>
+              Use the numbers below for immediate assistance and non-emergency
+              community support.
+            </p>
+            <ul style="margin: 16px 0 0; padding-left: 18px; color: #0f172a">
+              <li><strong>Emergency:</strong> 911</li>
+              <li><strong>Community safety line:</strong> 555-0123</li>
+              <li><strong>Traffic division:</strong> 555-0199</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="services" class="section">
+        <div class="section-title">
+          <h2>Our services</h2>
+          <p>
+            From patrol response to victim support, our station delivers a full
+            range of public safety programs.
+          </p>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Crime reporting</h3>
+            <p>
+              Report incidents online, review your case status, and get support
+              from our investigations team.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Community outreach</h3>
+            <p>
+              Join neighborhood watch meetings, school safety programs, and
+              public awareness events.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Traffic safety</h3>
+            <p>
+              Request traffic incident support, arrange roadside assistance, and
+              access safety resources.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>Meet our officers</h2>
+          <p>
+            Experienced patrol officers, detectives, and community liaisons
+            ready to protect and serve.
+          </p>
+        </div>
+        <div class="officer-list">
+          <div class="officer">
+            <div class="officer-avatar">A</div>
+            <div class="officer-info">
+              <h4>Officer Ava Collins</h4>
+              <span>Patrol Commander</span>
+            </div>
+          </div>
+          <div class="officer">
+            <div class="officer-avatar">M</div>
+            <div class="officer-info">
+              <h4>Detective Marcus Ray</h4>
+              <span>Investigations</span>
+            </div>
+          </div>
+          <div class="officer">
+            <div class="officer-avatar">S</div>
+            <div class="officer-info">
+              <h4>Sergeant Sofia Lee</h4>
+              <span>Community liaison</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="report-form" class="section">
+        <div class="section-title">
+          <h2>File a report</h2>
+          <p>
+            Share details about an incident so we can review it and respond
+            appropriately.
+          </p>
+        </div>
+        <div class="form-card">
+          <form onsubmit="handleReportSubmit(event)">
+            <div class="form-grid">
+              <div class="row-two">
+                <div>
+                  <label for="reportName">Your name</label>
+                  <input
+                    id="reportName"
+                    name="reportName"
+                    placeholder="Full name"
+                    required
+                  />
+                </div>
+                <div>
+                  <label for="reportType">Report type</label>
+                  <select id="reportType" name="reportType" required>
+                    <option value="public-safety">Public safety</option>
+                    <option value="traffic">Traffic incident</option>
+                    <option value="property-crime">Property crime</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label for="reportDescription">Description</label>
+                <textarea
+                  id="reportDescription"
+                  name="reportDescription"
+                  placeholder="Provide a short summary of the issue"
+                  required
+                ></textarea>
+              </div>
+              <button class="button primary" type="submit">
+                Submit report
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>Contact the station</h2>
+          <p>
+            Send a message for non-urgent inquiries, station administration, or
+            community services.
+          </p>
+        </div>
+        <div class="form-card">
+          <form id="contact-form" onsubmit="handleContactSubmit(event)">
+            <div class="form-grid">
+              <div class="row-two">
+                <div>
+                  <label for="contactName">Name</label>
+                  <input
+                    id="contactName"
+                    name="contactName"
+                    placeholder="Full name"
+                    required
+                  />
+                </div>
+                <div>
+                  <label for="contactEmail">Email</label>
+                  <input
+                    id="contactEmail"
+                    name="contactEmail"
+                    type="email"
+                    placeholder="Email address"
+                    required
+                  />
+                </div>
+              </div>
+              <div>
+                <label for="contactMessage">Message</label>
+                <textarea
+                  id="contactMessage"
+                  name="contactMessage"
+                  placeholder="How can we help?"
+                  required
+                ></textarea>
+              </div>
+              <button class="button primary" type="submit">Send message</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>Central Police Station | 123 Main St, Your City | Open 24/7</p>
+      </div>
+    </footer>
+
+    <div id="portal-notice" class="notice"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
